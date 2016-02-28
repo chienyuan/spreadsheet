@@ -35,7 +35,7 @@ module Spreadsheet
       def internal string, client=Spreadsheet.client_encoding
         string = string.dup
         key = ['UTF-16LE', client]
-        iconv = @@iconvs[key] ||= Iconv.new('UTF-16LE//TRANSLIT//IGNORE', client)
+        iconv = @@iconvs[key] ||= Iconv.new('UTF-16LE//IGNORE', client)
         iconv.iconv string
       end
       def utf8 string, client=Spreadsheet.client_encoding
